@@ -40,6 +40,8 @@ class controllerAdminNews {
     public static function newsDeleteResult($id)
 {
     $test = modelAdminNews::getNewsDelete($id);
+
+
     include_once('viewAdmin/newsDeleteForm.php');
 }
 }

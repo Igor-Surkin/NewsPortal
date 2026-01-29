@@ -94,8 +94,16 @@ class modelAdminNews {
     }
    public static function getNewsDelete($id){ 
     $test=false;
-    if(isset($_POST['save'])) {
-        
+    if(isset($_POST['delete'])) {
+        $sql="DELETE FROM `news` WHERE `news`.`id` = ".$id;
+        // echo $sql;
+        // die;
+        $db = new Database();
+            $item = $db->executeRun($sql);
+        if($item==true) {
+            $test=true;
+        }
     }
+    return $test;
    }
 }
